@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@nosferatu500/react-sortable-tree": ["./src/index.ts"]
+      "@salmanempowered/react-sortable-tree": ["./src/index.ts"]
     }
   },
   "include": ["src/**/*", "tests/**/*"],

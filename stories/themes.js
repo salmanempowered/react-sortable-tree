@@ -14,14 +14,14 @@ export default class App extends Component {
           expanded: true,
           children: [
             {
-              title: 'Imported from @nosferatu500/theme-file-explorer',
+              title: 'Imported from @salmanempowered/theme-file-explorer',
               expanded: true,
               children: [
                 {
                   title: (
                     <div>
                       Find it on{' '}
-                      <a href="https://www.npmjs.com/package/@nosferatu500/theme-file-explorer">
+                      <a href="https://www.npmjs.com/package/@salmanempowered/theme-file-explorer">
                         npm
                       </a>
                     </div>

@@ -5,7 +5,7 @@ import withScrolling, {
   createHorizontalStrength,
   createScrollingComponent,
   createVerticalStrength,
-} from '@nosferatu500/react-dnd-scrollzone'
+} from '@salmanempowered/react-dnd-scrollzone'
 import isEqual from 'lodash.isequal'
 import { DndContext, DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'

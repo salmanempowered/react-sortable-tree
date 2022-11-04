@@ -6,10 +6,10 @@
 
 # React Sortable Tree
 
-![NPM version](https://img.shields.io/npm/v/@nosferatu500/react-sortable-tree.svg?style=flat)
-![NPM license](https://img.shields.io/npm/l/@nosferatu500/react-sortable-tree.svg?style=flat)
-[![NPM total downloads](https://img.shields.io/npm/dt/@nosferatu500/react-sortable-tree.svg?style=flat)](https://npmcharts.com/compare/@nosferatu500/react-sortable-tree?minimal=true)
-[![NPM monthly downloads](https://img.shields.io/npm/dm/@nosferatu500/react-sortable-tree.svg?style=flat)](https://npmcharts.com/compare/@nosferatu500/react-sortable-tree?minimal=true)
+![NPM version](https://img.shields.io/npm/v/@salmanempowered/react-sortable-tree.svg?style=flat)
+![NPM license](https://img.shields.io/npm/l/@salmanempowered/react-sortable-tree.svg?style=flat)
+[![NPM total downloads](https://img.shields.io/npm/dt/@salmanempowered/react-sortable-tree.svg?style=flat)](https://npmcharts.com/compare/@salmanempowered/react-sortable-tree?minimal=true)
+[![NPM monthly downloads](https://img.shields.io/npm/dm/@salmanempowered/react-sortable-tree.svg?style=flat)](https://npmcharts.com/compare/@salmanempowered/react-sortable-tree?minimal=true)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 > A React component for Drag-and-drop sortable representation of hierarchical data. Checkout the [Storybook](https://frontend-collective.github.io/react-sortable-tree/) for a demonstration of some basic and advanced features.
@@ -35,10 +35,10 @@ Install `react-sortable-tree` using npm.
 
 ```sh
 # NPM
-npm install @nosferatu500/react-sortable-tree --save
+npm install @salmanempowered/react-sortable-tree --save
 
 # YARN
-yarn add @nosferatu500/react-sortable-tree
+yarn add @salmanempowered/react-sortable-tree
 ```
 
 ES6 and CommonJS builds are available with each distribution.
@@ -46,28 +46,28 @@ For example:
 
 ```js
 // This only needs to be done once; probably during your application's bootstrapping process.
-import '@nosferatu500/react-sortable-tree/style.css';
+import '@salmanempowered/react-sortable-tree/style.css';
 
 // You can import the default tree with dnd context
-import SortableTree from '@nosferatu500/react-sortable-tree';
+import SortableTree from '@salmanempowered/react-sortable-tree';
 
 // Or you can import the tree without the dnd context as a named export. eg
-import { SortableTreeWithoutDndContext as SortableTree } from '@nosferatu500/react-sortable-tree';
+import { SortableTreeWithoutDndContext as SortableTree } from '@salmanempowered/react-sortable-tree';
 
 // Importing from cjs (default)
-import SortableTree from '@nosferatu500/react-sortable-tree/dist/index.cjs.js';
-import SortableTree from '@nosferatu500/react-sortable-tree';
+import SortableTree from '@salmanempowered/react-sortable-tree/dist/index.cjs.js';
+import SortableTree from '@salmanempowered/react-sortable-tree';
 
 // Importing from esm
-import SortableTree from '@nosferatu500/react-sortable-tree/dist/index.esm.js';
+import SortableTree from '@salmanempowered/react-sortable-tree/dist/index.esm.js';
 ```
 
 ## Usage
 
 ```jsx
 import React, { Component } from 'react';
-import SortableTree from '@nosferatu500/react-sortable-tree';
-import '@nosferatu500/react-sortable-tree/style.css'; // This only needs to be imported once in your app
+import SortableTree from '@salmanempowered/react-sortable-tree';
+import '@salmanempowered/react-sortable-tree/style.css'; // This only needs to be imported once in your app
 
 export default class Tree extends Component {
   constructor(props) {
@@ -100,7 +100,7 @@ export default class Tree extends Component {
 | :----------------------------- | :------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | treeData<br/>_(required)_      |    object[]    | Tree data with the following keys: <div>`title` is the primary label for the node.</div><div>`subtitle` is a secondary label for the node.</div><div>`expanded` shows children of the node if true, or hides them if false. Defaults to false.</div><div>`children` is an array of child nodes belonging to the node.</div><div>**Example**: `[{title: 'main', subtitle: 'sub'}, { title: 'value2', expanded: true, children: [{ title: 'value3') }] }]`                                                                                                                                                                                           |
 | onChange<br/>_(required)_      |      func      | Called whenever tree data changed. Just like with React input elements, you have to update your own component's data to see the changes reflected.<div>`( treeData: object[] ): void`</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| getNodeKey<br/>_(recommended)_ |      func      | Specify the unique key used to identify each node and generate the `path` array passed in callbacks. With a setting of `getNodeKey={({ node }) => node.id}`, for example, in callbacks this will let you easily determine that the node with an `id` of `35` is (or has just become) a child of the node with an `id` of `12`, which is a child of ... and so on. It uses [`defaultGetNodeKey`](https://github.com/nosferatu500/react-sortable-tree/blob/master/src/utils/default-handlers.js) by default, which returns the index in the tree (omitting hidden nodes).<div>`({ node: object, treeIndex: number }): string or number`</div> |
+| getNodeKey<br/>_(recommended)_ |      func      | Specify the unique key used to identify each node and generate the `path` array passed in callbacks. With a setting of `getNodeKey={({ node }) => node.id}`, for example, in callbacks this will let you easily determine that the node with an `id` of `35` is (or has just become) a child of the node with an `id` of `12`, which is a child of ... and so on. It uses [`defaultGetNodeKey`](https://github.com/salmanempowered/react-sortable-tree/blob/master/src/utils/default-handlers.js) by default, which returns the index in the tree (omitting hidden nodes).<div>`({ node: object, treeIndex: number }): string or number`</div> |
 | generateNodeProps              |      func      | Generate an object with additional props to be passed to the node renderer. Use this for adding buttons via the `buttons` key, or additional `style` / `className` settings.<div>`({ node: object, path: number[] or string[], treeIndex: number, lowerSiblingCounts: number[], isSearchMatch: bool, isSearchFocus: bool }): object`</div>                                                                                                                                                                                                                                                                                                         |
 | onMoveNode                     |      func      | Called after node move operation. <div>`({ treeData: object[], node: object, nextParentNode: object, prevPath: number[] or string[], prevTreeIndex: number, nextPath: number[] or string[], nextTreeIndex: number }): void`</div>                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | onVisibilityToggle             |      func      | Called after children nodes collapsed or expanded. <div>`({ treeData: object[], node: object, expanded: bool, path: number[] or string[] }): void`</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -111,7 +111,7 @@ export default class Tree extends Component {
 | canDrop                        |      func      | Return false to prevent node from dropping in the given location. <div>`({ node: object, prevPath: number[] or string[], prevParent: object, prevTreeIndex: number, nextPath: number[] or string[], nextParent: object, nextTreeIndex: number }): bool`</div>                                                                                                                                                                                                                                                                                                                                                                                      |
 | canNodeHaveChildren            |      func      | Function to determine whether a node can have children, useful for preventing hover preview when you have a `canDrop` condition. Default is set to a function that returns `true`. Functions should be of type `(node): bool`.                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | theme                          |     object     | Set an all-in-one packaged appearance for the tree. See the [Themes](#themes) section for more information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| searchMethod                   |      func      | The method used to search nodes. Defaults to [`defaultSearchMethod`](https://github.com/nosferatu500/react-sortable-tree/blob/master/src/utils/default-handlers.js), which uses the `searchQuery` string to search for nodes with matching `title` or `subtitle` values. NOTE: Changing `searchMethod` will not update the search, but changing the `searchQuery` will.<div>`({ node: object, path: number[] or string[], treeIndex: number, searchQuery: any }): bool`</div>                                                                                                                                                               |
+| searchMethod                   |      func      | The method used to search nodes. Defaults to [`defaultSearchMethod`](https://github.com/salmanempowered/react-sortable-tree/blob/master/src/utils/default-handlers.js), which uses the `searchQuery` string to search for nodes with matching `title` or `subtitle` values. NOTE: Changing `searchMethod` will not update the search, but changing the `searchQuery` will.<div>`({ node: object, path: number[] or string[], treeIndex: number, searchQuery: any }): bool`</div>                                                                                                                                                               |
 | searchQuery                    | string or any  | Used by the `searchMethod` to highlight and scroll to matched nodes. Should be a string for the default `searchMethod`, but can be anything when using a custom search. Defaults to `null`.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | searchFocusOffset              |     number     | Outline the <`searchFocusOffset`>th node and scroll to it.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | onlyExpandSearchedNodes        |    boolean     | Only expand the nodes that match searches. Collapses all other nodes. Defaults to `false`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -123,13 +123,13 @@ export default class Tree extends Component {
 | className                      |     string     | Class name for the container wrapping the tree                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | slideRegionSize                |     number     | Size in px of the region near the edges that initiates scrolling on dragover. Defaults to `100`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | scaffoldBlockPxWidth           |     number     | The width of the blocks containing the lines representing the structure of the tree. Defaults to `44`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| nodeContentRenderer            |      any       | Override the default component ([`NodeRendererDefault`](https://github.com/nosferatu500/react-sortable-tree/blob/master/src/node-renderer-default.js)) for rendering nodes (but keep the scaffolding generator). This is a last resort for customization - most custom styling should be able to be solved with `generateNodeProps`, a `theme` or CSS rules. If you must use it, is best to copy the component in `node-renderer-default.js` to use as a base, and customize as needed.                                                                                                                                                     |
-| placeholderRenderer            |      any       | Override the default placeholder component ([`PlaceholderRendererDefault`](https://github.com/nosferatu500/react-sortable-tree/blob/master/src/placeholder-renderer-default.js)) which is displayed when the tree is empty. This is an advanced option, and in most cases should probably be solved with a `theme` or custom CSS instead.                                                                                                                                                                                                                                                                                                   |
+| nodeContentRenderer            |      any       | Override the default component ([`NodeRendererDefault`](https://github.com/salmanempowered/react-sortable-tree/blob/master/src/node-renderer-default.js)) for rendering nodes (but keep the scaffolding generator). This is a last resort for customization - most custom styling should be able to be solved with `generateNodeProps`, a `theme` or CSS rules. If you must use it, is best to copy the component in `node-renderer-default.js` to use as a base, and customize as needed.                                                                                                                                                     |
+| placeholderRenderer            |      any       | Override the default placeholder component ([`PlaceholderRendererDefault`](https://github.com/salmanempowered/react-sortable-tree/blob/master/src/placeholder-renderer-default.js)) which is displayed when the tree is empty. This is an advanced option, and in most cases should probably be solved with a `theme` or custom CSS instead.                                                                                                                                                                                                                                                                                                   |
 ## Data Helper Functions
 
 Need a hand turning your flat data into nested tree data?
 Want to perform add/remove operations on the tree data without creating your own recursive function?
-Check out the helper functions exported from [`tree-data-utils.js`](https://github.com/nosferatu500/react-sortable-tree/blob/master/src/utils/tree-data-utils.js).
+Check out the helper functions exported from [`tree-data-utils.js`](https://github.com/salmanempowered/react-sortable-tree/blob/master/src/utils/tree-data-utils.js).
 
 - **`getTreeFromFlatData`**: Convert flat data (like that from a database) into nested tree data.
 - **`getFlatDataFromTree`**: Convert tree data back to flat data.
@@ -158,10 +158,10 @@ Using the `theme` prop along with an imported theme module, you can easily overr
 |                       ![File Explorer Theme](https://user-images.githubusercontent.com/4413963/32144502-1df1ae08-bcfd-11e7-8f63-8b836dace1a4.png)                        |           <img alt="Full Node Drag Theme" src="https://user-images.githubusercontent.com/4413963/33521792-61dc2c50-d81f-11e7-8ab1-359661a11ca4.png" width="300">           |  <img alt="MINIMAL THEME" src="https://github.com/lifejuggler/react-sortable-tree-theme-minimal/blob/master/example-resource/main.png" width="300">  |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: |
 |                                                                            **File Explorer**                                                                             |                                                                             **Full Node Drag**                                                                             |                                                   **Minimalistic theme inspired from MATERIAL UI**                                                   |
-|                                                                 @nosferatu500/theme-file-explorer                                                                  |                                                                  react-sortable-tree-theme-full-node-drag                                                                  |                                                          react-sortable-tree-theme-minimal                                                           |
-| [Github](https://github.com/nosferatu500/theme-file-explorer) \| [NPM](https://www.npmjs.com/package/@nosferatu500/theme-file-explorer) | [Github](https://github.com/frontend-collective/react-sortable-tree-theme-full-node-drag) \| [NPM](https://www.npmjs.com/package/react-sortable-tree-theme-full-node-drag) | [Github](https://github.com/lifejuggler/react-sortable-tree-theme-minimal) \| [NPM](https://www.npmjs.com/package/react-sortable-tree-theme-minimal) |
+|                                                                 @salmanempowered/theme-file-explorer                                                                  |                                                                  react-sortable-tree-theme-full-node-drag                                                                  |                                                          react-sortable-tree-theme-minimal                                                           |
+| [Github](https://github.com/salmanempowered/theme-file-explorer) \| [NPM](https://www.npmjs.com/package/@salmanempowered/theme-file-explorer) | [Github](https://github.com/frontend-collective/react-sortable-tree-theme-full-node-drag) \| [NPM](https://www.npmjs.com/package/react-sortable-tree-theme-full-node-drag) | [Github](https://github.com/lifejuggler/react-sortable-tree-theme-minimal) \| [NPM](https://www.npmjs.com/package/react-sortable-tree-theme-minimal) |
 
-**Help Wanted** - As the themes feature has just been enabled, there are very few (only _two_ at the time of this writing) theme modules available. If you've customized the appearance of your tree to be especially cool or easy to use, I would be happy to feature it in this readme with a link to the Github repo and NPM page if you convert it to a theme. You can use my [file explorer theme repo](https://github.com/nosferatu500/theme-file-explorer) as a template to plug in your own stuff.
+**Help Wanted** - As the themes feature has just been enabled, there are very few (only _two_ at the time of this writing) theme modules available. If you've customized the appearance of your tree to be especially cool or easy to use, I would be happy to feature it in this readme with a link to the Github repo and NPM page if you convert it to a theme. You can use my [file explorer theme repo](https://github.com/salmanempowered/theme-file-explorer) as a template to plug in your own stuff.
 
 ## Browser Compatibility
 
@@ -186,10 +186,10 @@ react-dnd only allows for one DragDropContext at a time (see: https://github.com
 
 ```js
 // before
-import SortableTree from '@nosferatu500/react-sortable-tree';
+import SortableTree from '@salmanempowered/react-sortable-tree';
 
 // after
-import { SortableTreeWithoutDndContext as SortableTree } from '@nosferatu500/react-sortable-tree';
+import { SortableTreeWithoutDndContext as SortableTree } from '@salmanempowered/react-sortable-tree';
 ```
 
 ## Contributing
