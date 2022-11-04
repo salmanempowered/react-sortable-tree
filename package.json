@@ -16,7 +16,7 @@
     }
   },
   "files": [
-    "dist/*"
+    "**"
   ],
   "sideEffects": false,
   "scripts": {
