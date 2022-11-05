@@ -1624,10 +1624,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@salmanempowered/react-dnd-scrollzone@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@salmanempowered/react-dnd-scrollzone/-/react-dnd-scrollzone-1.0.3.tgz#934f7235d1d35242d16e10acba8f729ed9fe43fc"
-  integrity sha512-sqQP0TGRj/H+fHAclTBtvzPilwSmbg5YB8tfGhH9ONFQ9Oq3P+iGX8kZ7eZibsq88CCUtmEIRELe3U3Y2EJsSg==
+"@salmanempowered/react-dnd-scrollzone@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@salmanempowered/react-dnd-scrollzone/-/react-dnd-scrollzone-1.0.4.tgz#9e8d09c0dca6f5d0b7d335415db123cf0fb505de"
+  integrity sha512-uGm4zzuQ4KGkICPpQM8LUO4rwPHvsp51wZjJuf8UdCRj4DFz4N+GnJEezZwQLY72H8mUSxq12yjdt93datmiNg==
 
 "@storybook/addon-postcss@^2.0.0":
   version "2.0.0"

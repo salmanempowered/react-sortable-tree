@@ -1,6 +1,6 @@
 {
   "name": "@salmanempowered/react-sortable-tree",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Drag-and-drop sortable component for nested data and hierarchies",
   "main": "./index.js",
   "module": "./esm/index.js",
@@ -36,7 +36,7 @@
     "publish:release": "cd dist && npm publish"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "repository": {
     "type": "git",
@@ -58,7 +58,7 @@
   "license": "MIT",
   "bugs": "https://github.com/salmanempowered/react-sortable-tree/issues",
   "dependencies": {
-    "@salmanempowered/react-dnd-scrollzone": "^1.0.3",
+    "@salmanempowered/react-dnd-scrollzone": "^1.0.4",
     "lodash.isequal": "^4.5.0",
     "react-dnd": "14.0.4",
     "react-dnd-html5-backend": "^14.1.0",
