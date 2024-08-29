@@ -683,8 +683,10 @@ class ReactSortableTree extends Component {
           id="vlist"
           ref={this.listRef}
           dragDropManager={dragDropManager}
-          style={innerStyle}>
-          {rows.map((item, index) => {
+          style={innerStyle}
+          count={rows.length}>
+          {(index) => {
+            const item = rows[index]
             return this.renderRow(item, {
               listIndex: index,
               getPrevRow: () => rows[index - 1] || undefined,
@@ -693,7 +695,7 @@ class ReactSortableTree extends Component {
               swapDepth: draggedDepth,
               swapLength,
             })
-          })}
+          }}
         </VList>
       )
     }
